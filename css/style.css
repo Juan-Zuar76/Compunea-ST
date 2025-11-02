@@ -499,6 +499,50 @@ form input[type="reset"]:focus-visible{
 /* Imagen dentro del recuadro .mock */
 .mock { position: relative; }
  .hero-img { object-fit: contain; background:#0b1327; padding:10px; }
+/* ===== FAB WhatsApp (solo Contacto) ===== */
+.wsp-fab{
+  position: fixed;
+  right: 18px;
+  bottom: calc(18px + env(safe-area-inset-bottom));
+  width: 64px;
+  height: 64px;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: transparent;
+  text-decoration: none;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.5));
+  animation: floatY 3s ease-in-out infinite;
+  transition: transform .2s ease, filter .2s ease;
+}
+.wsp-fab img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.wsp-fab:hover{
+  transform: translateY(-4px) scale(1.03);
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,.6));
+}
+
+/* flotadito arriba/abajo */
+@keyframes floatY{
+  0%   { transform: translateY(0) }
+  50%  { transform: translateY(-8px) }
+  100% { transform: translateY(0) }
+}
+
+/* menos movimiento para quien lo pida */
+@media (prefers-reduced-motion: reduce){
+  .wsp-fab{ animation: none }
+}
+
+/* tamaño más cómodo en pantallas chicas */
+@media (max-width: 520px){
+  .wsp-fab{ width: 56px; height: 56px; right: 14px; bottom: 14px; }
+}
+
 
 
 
