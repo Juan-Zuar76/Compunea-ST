@@ -1,0 +1,499 @@
+/* =========================
+   Reset + variables
+========================= */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+:root{
+  --bg:#0f172a; --card:#111827; --ink:#e5e7eb; --muted:#94a3b8; --line:#1f2937;
+  --brand:#22d3ee; --accent:#a78bfa; --neon:#ffd43b;
+}
+body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif}
+.container{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* =========================
+   Header + brand + hamburguesa
+========================= */
+.site-header{position:sticky;top:0;z-index:800;border-bottom:1px solid var(--line);background:rgba(17,24,39,.85);backdrop-filter:blur(8px);overflow:hidden}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;max-width:1080px;margin:0 auto;padding:10px 20px;position:relative;z-index:810}
+.brand{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;font-weight:800}
+.logo{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--accent));color:#0b1020;font-weight:900}
+.hamburger{width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--line);border-radius:10px;background:#0b1327;cursor:pointer;position:relative;z-index:820}
+.hamburger span{width:18px;height:2px;background:#e5e7eb;display:block}
+.hamburger span+span{margin-top:4px}
+
+/* ===== Drawer (menú) + Backdrop ===== */
+.drawer{
+  position:fixed; top:0; right:-260px; width:240px; height:100dvh;
+  background:#0b1327; border-left:1px solid var(--line);
+  padding:70px 18px 18px; display:flex; flex-direction:column; gap:10px;
+  transition:right .3s ease; z-index:1000;
+}
+.drawer a{padding:10px 12px;border-radius:10px;color:#e5e7eb;text-decoration:none}
+.drawer a.active,.drawer a:hover{background:#1f2937}
+.drawer.open{right:0}
+.backdrop{
+  position:fixed; inset:0; background:rgba(0,0,0,.55);
+  backdrop-filter:blur(1px); opacity:0; pointer-events:none;
+  transition:opacity .2s ease; z-index:900;
+}
+.backdrop.show{opacity:.75;pointer-events:auto}
+.nav-open{overflow:hidden}
+
+/* =========================
+   Home / tipografías / bloques
+========================= */
+.section-title{font-size:clamp(22px,3.5vw,28px);margin:24px 0 12px;font-weight:800}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;border:1px solid #334155;color:inherit;text-decoration:none;transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:linear-gradient(135deg,var(--brand),var(--accent));color:#0b1020;border:none;font-weight:800}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap}
+.hero{display:flex;gap:22px;align-items:stretch;padding:28px 0}
+.hero .col{flex:1}
+.hero .title{font-size:clamp(26px,4.6vw,40px);line-height:1.1;margin-bottom:10px;font-weight:900}
+.lead{color:var(--muted);margin-bottom:14px}
+.box{display:flex}
+.mock{flex:1;border:1px solid var(--line);border-radius:14px;display:grid;place-items:center;color:#cbd5e1;background:linear-gradient(180deg,rgba(15,23,42,.8),rgba(15,23,42,.6))}
+.features{display:flex;gap:16px;flex-wrap:wrap;padding:14px 0 28px}
+.features .card{flex:1 1 280px}
+
+/* =========================
+   Contacto
+========================= */
+.map-embed{aspect-ratio:16/9;width:100%;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.map-embed iframe{width:100%;height:100%;border:0}
+
+/* =========================
+   Footer
+========================= */
+footer{border-top:1px solid var(--line);margin-top:20px}
+.foot{display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:14px}
+
+/* =========================
+   Carrusel (imagen contenida al marco)
+========================= */
+.carousel-wrap{border-bottom:1px solid var(--line);background:linear-gradient(180deg,#0f172a,#0b1327)}
+.carousel{position:relative;overflow:hidden;border-radius:16px;border:1px solid var(--line);--h:420px}
+.viewport{height:var(--h)}
+.track{display:flex;transition:transform .8s cubic-bezier(.22,.61,.36,1)}
+.slide{min-width:100%;opacity:0;transition:opacity 1s ease}
+.slide.is-active{opacity:1}
+.carousel img{display:block;width:100%;height:auto;max-height:420px;object-fit:contain;background:#0b1327}
+.nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:34px;height:34px;border-radius:8px;background:#0b1327;border:1px solid var(--line);color:#e5e7eb;cursor:pointer}
+.prev{left:10px}.next{right:10px}
+.dots{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;gap:8px}
+.dots button{width:9px;height:9px;border-radius:999px;border:1px solid #cbd5e1;background:rgba(15,23,42,.6)}
+.dots button[aria-selected="true"]{background:#e5e7eb}
+
+/* =========================
+   Servicios: grillas + tira con caption
+========================= */
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:18px}
+.card-img{width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:10px;border:1px solid #2b3440}
+
+/* Tira .strip con caption sobre imagen */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:6px 0 24px}
+.strip .thumb{position:relative;border-radius:12px;overflow:hidden;border:1px solid #2b3440}
+.strip .thumb img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .3s ease,filter .3s ease}
+.strip .thumb figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-size:13px;color:#e5e7eb;
+  background:linear-gradient(to top, rgba(0,0,0,.65), rgba(0,0,0,0));
+  text-shadow:0 1px 2px rgba(0,0,0,.7);
+}
+.strip .thumb:hover img{transform:scale(1.03);filter:brightness(1.06)}
+
+/* =========================
+   Accordion
+========================= */
+.accordion{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+.ac-item + .ac-item{border-top:1px solid var(--line)}
+.ac-btn{
+  width:100%;text-align:left;padding:14px 16px;background:#0b1327;color:var(--ink);
+  border:0;cursor:pointer;font-weight:700;display:flex;justify-content:space-between;align-items:center
+}
+.ac-btn::after{content:"▾";opacity:.7;transition:transform .2s}
+.ac-btn[aria-expanded="true"]::after{transform:rotate(180deg)}
+.ac-panel{max-height:0;overflow:hidden;transition:max-height .25s ease;background:var(--card);padding:0 16px}
+.ac-panel.is-open{padding:12px 16px;max-height:300px}
+
+/* =========================
+   Contacto: grilla 2 col + Modal
+========================= */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-2 form{display:grid;gap:10px}
+.grid-2 input,.grid-2 textarea{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #334155;background:#0b1327;color:var(--ink)}
+.modal{position:fixed;inset:0;display:none}
+.modal[aria-hidden="false"]{display:block}
+.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(1px)}
+.modal-card{position:relative;max-width:520px;margin:12vh auto 0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+
+/* =========================
+   Animación 2: revela on scroll
+========================= */
+.revela{opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s}
+.revela.is-in{opacity:1;transform:none}
+
+/* =========================
+   NEÓN amarillo (títulos de tarjetas y captions)
+========================= */
+.service-card .card-caption h3,
+.strip .thumb figcaption{
+  color:#fffceb;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 6px rgba(255,229,94,.9),
+    0 0 12px rgba(255,212,59,.75),
+    0 0 22px rgba(255,212,59,.55);
+  animation:neonPulse 2.2s ease-in-out infinite alternate;
+}
+.service-card .card-caption p{
+  text-shadow:
+    0 0 1px rgba(255,255,255,.6),
+    0 0 6px rgba(255,212,59,.35);
+}
+.service-card:hover .card-caption h3,
+.strip .thumb:hover figcaption{
+  text-shadow:
+    0 0 2px #fff,
+    0 0 10px rgba(255,229,94,1),
+    0 0 22px rgba(255,212,59,.9),
+    0 0 36px rgba(255,212,59,.7);
+}
+@keyframes neonPulse{
+  from{
+    text-shadow:
+      0 0 1px #fff,
+      0 0 4px rgba(255,229,94,.7),
+      0 0 8px rgba(255,212,59,.5),
+      0 0 12px rgba(255,212,59,.4);
+  }
+  to{
+    text-shadow:
+      0 0 1px #fff,
+      0 0 7px rgba(255,229,94,1),
+      0 0 16px rgba(255,212,59,.9),
+      0 0 26px rgba(255,212,59,.7);
+  }
+}
+
+/* =========================
+   Matrix (Canvas) SOLO header
+========================= */
+.matrix-canvas{
+  position:absolute; inset:0; z-index:700; pointer-events:none;
+  mix-blend-mode:screen; opacity:.55;
+}
+@media (prefers-reduced-motion:reduce){.matrix-canvas{display:none}}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width:900px){
+  .hero{flex-direction:column}
+  .cards3{grid-template-columns:1fr 1fr}
+  .strip{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  .cards3{grid-template-columns:1fr}
+  .strip{grid-template-columns:1fr}
+  .carousel{--h:220px}
+}
+@media (max-width:800px){
+  .carousel{--h:300px}
+}
+/* === FIX FINAL: CAPAS DEL HEADER, MATRIX Y MENU === */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow: hidden;
+  isolation: isolate; /* aísla al header del blend global */
+}
+
+/* Canvas del efecto matrix: va al fondo, no tapa clics */
+.matrix-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: .55;
+}
+
+/* Contenido principal del header (logo, texto, menú) */
+.site-header .wrap {
+  position: relative;
+  z-index: 10;
+}
+
+/* Botón hamburguesa siempre visible arriba de todo */
+.hamburger {
+  position: relative;
+  z-index: 20;
+  background: rgba(11, 19, 39, 0.95);
+  box-shadow: inset 0 0 0 1px #223041, 0 0 4px rgba(0, 255, 255, .4);
+}
+.hamburger span {
+  background: #fff !important;
+}
+
+/* Drawer y backdrop en orden correcto */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 240px;
+  height: 100dvh;
+  background: #0b1327;
+  border-left: 1px solid var(--line);
+  padding: 70px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: right .3s;
+  z-index: 1000;
+}
+.drawer.open {
+  right: 0;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  backdrop-filter: blur(1px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+  z-index: 900;
+}
+.backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+/* ===== MENU DESPLEGABLE HACIA ABAJO ===== */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  background: rgba(11, 19, 39, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 0;
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  z-index: 100;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.25s ease;
+}
+
+.dropdown-menu a {
+  padding: 10px 16px;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(34, 211, 238, 0.12);
+  color: var(--brand);
+}
+
+.dropdown-menu.show {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === CORRECCIÓN: posición uniforme del menú desplegable === */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  overflow: visible;
+  isolation: isolate;
+}
+
+/* Ajuste de altura base del header para todas las páginas */
+.site-header .wrap {
+  height: 60px; /* aseguramos que todas las páginas tengan el mismo alto */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Asegurar que el dropdown arranque justo debajo del header */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 2px); /* 2px de separación visual */
+  right: 20px;
+  background: rgba(11, 19, 39, 0.96);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 0;
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  z-index: 300;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.25s ease;
+}
+/* ========= SOBRE NOSOTROS ========= */
+.about-grid{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap:16px;
+}
+.about-card{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px }
+.about-card h3{ margin-bottom:6px }
+.about-lead{ color:var(--ink); opacity:.92; margin:8px 0 12px }
+.about-list{ margin:0; padding-left:18px; color:var(--muted) }
+.about-list li{ margin:6px 0 }
+
+.about-stats{ display:flex; gap:10px; margin-top:14px; flex-wrap:wrap }
+.stat{
+  flex:1 1 120px;
+  background:#0b1327; border:1px solid #223041; border-radius:12px;
+  padding:10px; text-align:center;
+}
+.stat span{ display:block; font-weight:900; font-size:18px }
+.stat label{ display:block; font-size:12px; color:var(--muted) }
+
+.about-side{ display:flex; flex-direction:column; gap:12px }
+.about-photo{ margin:0 }
+.about-photo img{
+  width:100%; aspect-ratio:4/3; object-fit:cover;
+  border-radius:12px; border:1px solid #2b3440;
+}
+
+.about-badges{ display:flex; gap:8px; flex-wrap:wrap }
+.badge-soft{
+  display:inline-block; padding:6px 10px; border-radius:999px;
+  background: #0b1327; border:1px solid #223041; color:#cbe7ff; font-size:12px
+}
+
+.about-values{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:8px;
+}
+.about-values .v{
+  background:#0b1327; border:1px solid #223041; border-radius:12px; padding:10px;
+}
+.about-values strong{ display:block }
+.about-values small{ color:var(--muted) }
+
+/* responsive */
+@media (max-width:900px){
+  .about-grid{ grid-template-columns:1fr; }
+  .about-values{ grid-template-columns:1fr 1fr; }
+}
+@media (max-width:620px){
+  .about-values{ grid-template-columns:1fr; }
+}
+/* Cursor de mano en todo lo clickeable */
+button,
+.btn,
+.hamburger,
+.dropdown-menu a,
+.drawer a,
+.ac-btn,
+.nav,                 /* flechas del carrusel */
+.wa-float,            /* WhatsApp flotante */
+label[for],
+input[type="submit"],
+input[type="button"],
+input[type="reset"]{
+  cursor: pointer;
+}
+/* Botón de reset con mejor contraste */
+form button[type="reset"],
+form input[type="reset"]{
+  background: #0b1327;               /* oscuro */
+  color: #e5e7eb;                    /* texto claro */
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 600;
+  transition: background .15s ease, transform .15s ease, border-color .15s ease;
+}
+
+form button[type="reset"]:hover,
+form input[type="reset"]:hover{
+  background: #152033;
+  border-color: #41526a;
+  transform: translateY(-1px);
+}
+
+form button[type="reset"]:focus-visible,
+form input[type="reset"]:focus-visible{
+  outline: 2px solid #22d3ee;
+  outline-offset: 2px;
+
+}
+/* ===== COMPUNEA metalizado + pulso (header) ===== */
+.site-header .brand span{
+  /* 50% más grande aprox. y que no corte en dos líneas */
+  font-size: clamp(20px, 2.4vw, 30px);
+  font-weight: 900;
+  letter-spacing: .6px;
+  white-space: nowrap;
+
+  /* efecto metal */
+  background:
+    linear-gradient(-45deg,
+      #f7f7f7 0%,
+      #cfd4dd 18%,
+      #ffffff 32%,
+      #9aa3b3 50%,
+      #e6e9ef 68%,
+      #b8c0cc 82%,
+      #f7f7f7 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* brillo + pulso */
+  text-shadow:
+    0 0 0 rgba(0,0,0,0),               /* base invisible (porque es gradient clip) */
+    0 1px 1px rgba(0,0,0,.35),         /* bisel sutil */
+    0 0 12px rgba(34,211,238,.25),     /* glow celeste leve */
+    0 0 22px rgba(167,139,250,.18);    /* glow violeta leve */
+
+  animation: metalShift 6s linear infinite, glowPulse 2.8s ease-in-out infinite;
+}
+
+.site-header .brand:hover span{
+  /* un toque más de glow al pasar el mouse */
+  text-shadow:
+    0 1px 1px rgba(0,0,0,.4),
+    0 0 16px rgba(34,211,238,.35),
+    0 0 28px rgba(167,139,250,.28);
+}
+
+@keyframes metalShift{
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes glowPulse{
+  0%,
+  100%{
+    text-shadow:
+      0 1px 1px rgba(0,0,0,.35),
+      0 0 10px rgba(34,211,238,.20),
+      0 0 18px rgba(167,139,250,.14);
+  }
+  50%{
+    text-shadow:
+      0 1px 1px rgba(0,0,0,.4),
+      0 0 16px rgba(34,211,238,.35),
+      0 0 26px rgba(167,139,250,.24);
+  }
+}
+

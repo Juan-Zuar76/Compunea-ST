@@ -1,0 +1,141 @@
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/app.js"></script>
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COMPUNEA.ST · Contacto</title>
+<link rel="stylesheet" href="../css/style.css">
+</head><body>
+<header class="site-header">
+  <canvas class="matrix-canvas"></canvas>
+  <div class="wrap">
+    <a href="../index.html" class="brand">
+      <div class="logo">ST</div>
+      <span>COMPUNEA</span>
+    </a>
+    <button class="hamburger" id="navToggle" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Menú desplegable -->
+  <nav class="dropdown-menu" id="dropdownMenu">
+    <a href="../index.html">Inicio</a>
+    <a href="../page/servicios.html">Servicios</a>
+    <a href="../page/contacto.html">Contacto</a>
+      </nav>
+</header>
+
+
+<main class="container">
+  <h1 class="section-title">Contacto</h1>
+
+  <div class="grid-2">
+    <!-- Formulario -->
+    <div class="card">
+      <h3>Escribinos</h3>
+      <form id="contactForm">
+        <label>Nombre
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" placeholder="tu@correo.com" required>
+        </label>
+        <label>Consulta
+          <textarea name="mensaje" placeholder="Contanos en qué te ayudamos…" rows="5" required></textarea>
+        </label>
+        <div class="btn-row">
+          <button class="btn primary" type="submit">Enviar consulta</button>
+          <button class="btn" type="reset">Limpiar</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Mapa + datos -->
+    <div class="card">
+      <h3>Dónde estamos</h3>
+      <p>📍 Zona Sur Av.Colon 1147</p>
+      <div class="map-embed">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5037.67909717803!2d-58.84212862617262!3d-27.48830494510085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9457be6e6bd69eb9%3A0x6fb425a6c085924!2sCOMPUNEA!5e0!3m2!1ses-419!2sar!4v1761709936653!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div style="margin-top:10px">
+  <a class="btn" href="https://www.google.com/maps?daddr=-27.4886855,-58.8425263"
+     target="_blank" rel="noopener">Cómo llegar</a>
+</div>
+
+      <p style="margin-top:10px">📞 +54 9 000 000 000 · ✉ contacto@compunea.example</p>
+    </div>
+  </div>
+</main>
+
+<!-- Modal “gracias” -->
+<div class="modal" id="okModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="okTitle">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-card">
+    <h3 id="okTitle">¡Gracias por tu mensaje!</h3>
+    <p>Lo recibimos correctamente. Te respondemos a la brevedad. 💙</p>
+    <div class="btn-row" style="margin-top:10px">
+      <button class="btn primary" data-close>Aceptar</button>
+    </div>
+  </div>
+</div>
+
+
+<footer><div class="container foot">
+  <div>© <span id="year"></span> COMPUNEA</div><a href="contacto.html">Escribinos</a>
+</div></footer>
+<script src="../js/app.js"></script>
+<script src="../js/app.js"></script>
+<a class="wa-float" href="https://wa.me/5490000000000" target="_blank" aria-label="Chatear por WhatsApp">🟢</a>
+
+</body></html>
+<!-- ========= SOBRE NOSOTROS (en Contacto) ========= -->
+<section id="sobre" class="about revela">
+  <h2 class="section-title">Sobre nosotros</h2>
+
+  <div class="about-grid">
+    <article class="about-card">
+      <h3>COMPUNEA · Servicio técnico</h3>
+      <p class="about-lead">
+        Ccompunea Servicio tecnico se inicio en el año 2011 , prestando servio de reparacion de pc
+        de pc , electronica general e instalacion de redes domesticas, nos basamos en diagnosticos
+        hechos a conciensia con conocimientos en electronica e ingenieria.Presupuestos precisos 
+        y a medida de cada posibilidad.
+        Ponemos todo nuestro conosimiento al servicio de nuestros clientes.
+      </p>
+
+      <ul class="about-list">
+        <li>🔧 Reparación de PC/Notebook (reballing/rework, SSD/RAM, limpieza profunda).</li>
+        <li>🌐 Redes hogareñas y PyME (Wi-Fi, cableado, CCTV, VLAN, hardening básico).</li>
+        <li>🤖 Electrónica & IoT (Arduino/ESP, sensores, prototipos y documentación).</li>
+      </ul>
+
+      <!-- Stats/mini-métricas -->
+      <div class="about-stats">
+        <div class="stat"><span>27 años</span><label>experiencia</label></div>
+        <div class="stat"><span>1500+</span><label>equipos reparados</label></div>
+        <div class="stat"><span>24–48h</span><label>diagnóstico</label></div>
+      </div>
+    </article>
+
+    <aside class="about-side">
+      <figure class="about-photo">
+        <img src="../media/pc10.png" alt="Taller Compunea">
+      </figure>
+
+      <div class="about-badges">
+        <span class="badge-soft">Electrónica</span>
+        <span class="badge-soft">Redes</span>
+        <span class="badge-soft">Datos</span>
+        <span class="badge-soft">IoT</span>
+      </div>
+
+      <!-- Línea de valores -->
+      <div class="about-values">
+        <div class="v"><strong>Claridad</strong><small>presupuesto explicado</small></div>
+        <div class="v"><strong>Garantía</strong><small>mano de obra y repuestos</small></div>
+        <div class="v"><strong>Seguimiento</strong><small>WhatsApp en todo el proceso</small></div>
+      </div>
+    </aside>
+  </div>
+</section>
+

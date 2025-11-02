@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COMPUNEA.ST · Servicios</title>
+<link rel="stylesheet" href="../css/style.css">
+</head><body>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="../index.html"><span class="logo">CN</span><strong>COMPUNEA</strong></a>
+  <button class="hamburger" id="navToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Abrir menú">
+    <span></span><span></span><span></span></button>
+ <nav class="dropdown-menu" id="dropdownMenu">
+  <a href="../index.html">Inicio</a>
+  <a href="../page/servicios.html" class="active">Servicios</a>
+  <a href="../page/contacto.html">Contacto</a>
+  </nav>
+
+  <div class="backdrop" id="backdrop"></div>
+</div></header>
+
+<main class="container">
+  <h1 class="section-title">Servicios</h1>
+
+  <!-- Cards con imagen -->
+  <section class="cards3">
+    <article class="card revela">
+      <img class="card-img" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=60" alt="Reparación de PC y notebook">
+      <h3>Reparación PC / Notebook</h3>
+      <p>Diagnóstico, rework/reballing, limpieza profunda, upgrades SSD/RAM, instalación de SO.</p>
+    </article>
+    <article class="card revela">
+      <img class="card-img" src="../media/secur1.jpg" alt="Redes y seguridad">
+      <h3>Redes y Seguridad</h3>
+      <p>Cableado estructurado, Wi-Fi, CCTV, segmentación (VLAN), hardening básico para PyME.</p>
+    </article>
+    <article class="card revela">
+      <img class="card-img" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=60" alt="Electrónica e IoT">
+      <h3>Electrónica & IoT</h3>
+      <p>Arduino/ESP, sensores, automatización, prototipos y documentación del proyecto.</p>
+    </article>
+  </section>
+
+  <!-- Tira de imágenes/mini-galería temática -->
+<section class="strip">
+  <figure class="thumb">
+    <img src="../media/red1.jpg" alt="Patch panel y cableado">
+    <figcaption>Patch panel y cableado</figcaption>
+  </figure>
+
+  <figure class="thumb">
+    <img src="../media/ard1.png"
+         alt="Placa Arduino en protoboard">
+    <figcaption>Arduino en protoboard</figcaption>
+  </figure>
+
+  <figure class="thumb">
+    <img src="../media/eset1.png" alt="Robot auto con sensores">
+    <figcaption>Robot automata con sensores</figcaption>
+  </figure>
+
+  <figure class="thumb">
+    <img src="../media/pc10.png" alt="Placa electrónica en reparación">
+    <figcaption>Placa electrónica en reparación</figcaption>
+  </figure>
+</section>
+
+
+  <!-- FAQ: Accordion -->
+  <section class="revela">
+    <h2 class="section-title">Preguntas frecuentes</h2>
+    <div class="accordion" id="faq">
+      <div class="ac-item">
+        <button class="ac-btn" aria-expanded="true" aria-controls="faq1">¿Cuánto demora el diagnóstico?</button>
+        <div id="faq1" class="ac-panel is-open">
+          <p>Generalmente entre 24 y 48 horas según complejidad y repuestos.</p>
+        </div>
+      </div>
+      <div class="ac-item">
+        <button class="ac-btn" aria-expanded="false" aria-controls="faq2">¿Hacen copia de seguridad?</button>
+        <div id="faq2" class="ac-panel">
+          <p>Sí, siempre que el estado del equipo lo permita y con tu autorización previa.</p>
+        </div>
+      </div>
+      <div class="ac-item">
+        <button class="ac-btn" aria-expanded="false" aria-controls="faq3">¿Tienen garantía?</button>
+        <div id="faq3" class="ac-panel">
+          <p>Ofrecemos garantía sobre mano de obra y repuestos provistos por el taller.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<footer><div class="container foot">
+  <div>© <span id="year"></span> COMPUNEA</div><a href="contacto.html">Escribinos</a>
+</div></footer>
+<script src="../js/app.js"></script>
+<a class="wa-float" href="https://wa.me/5490000000000" target="_blank" aria-label="Chatear por WhatsApp">🟢</a>
+</body></html>
