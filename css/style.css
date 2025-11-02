@@ -496,4 +496,10 @@ form input[type="reset"]:focus-visible{
       0 0 26px rgba(167,139,250,.24);
   }
 }
+/* Imagen dentro del recuadro .mock */
+.mock { position: relative; }
+ .hero-img { object-fit: contain; background:#0b1327; padding:10px; }
+
+
+
 
