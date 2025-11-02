@@ -498,7 +498,7 @@ form input[type="reset"]:focus-visible{
 }
 /* Imagen dentro del recuadro .mock */
 .mock { position: relative; }
- .hero-img { object-fit: contain; background:#0b1327; padding:10px; }
+ .hero-img { object-fit: contain; background:#0b132700; padding:10px; }
 
 /* ===== FAB WhatsApp (solo Contacto) ===== */
 .wsp-fab{
@@ -543,6 +543,7 @@ form input[type="reset"]:focus-visible{
 @media (max-width: 520px){
   .wsp-fab{ width: 56px; height: 56px; right: 14px; bottom: 14px; }
 }
+
 
 
 
