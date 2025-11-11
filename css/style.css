@@ -138,13 +138,13 @@ footer{border-top:1px solid var(--line);margin-top:20px}
 ========================= */
 .service-card .card-caption h3,
 .strip .thumb figcaption{
-  color:#fffceb;
+  color:#12061b;
   text-shadow:
     0 0 1px #fff,
     0 0 6px rgba(255,229,94,.9),
     0 0 12px rgba(255,212,59,.75),
     0 0 22px rgba(255,212,59,.55);
-  animation:neonPulse 2.2s ease-in-out infinite alternate;
+  animation:neonPulse 4.2s ease-in-out infinite alternate;
 }
 .service-card .card-caption p{
   text-shadow:
@@ -175,7 +175,6 @@ footer{border-top:1px solid var(--line);margin-top:20px}
       0 0 26px rgba(255,212,59,.7);
   }
 }
-
 /* =========================
    Matrix (Canvas) SOLO header
 ========================= */
@@ -543,6 +542,7 @@ form input[type="reset"]:focus-visible{
 @media (max-width: 520px){
   .wsp-fab{ width: 56px; height: 56px; right: 14px; bottom: 14px; }
 }
+
 
 
 
