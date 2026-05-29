@@ -1,34 +1,38 @@
 <!DOCTYPE html><html lang="es"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>COMPUNEA.ST · Servicios</title>
-  <link rel="icon" href="../media/favicon.png" type="image/png+xml">
-<link rel="alternate icon" href="../media/favicon.png" type="image/png">
-<link rel="apple-touch-icon" href="../media/favicon.png">
-<meta name="theme-color" content="#0f172a">
-
 <link rel="stylesheet" href="../css/style.css">
-  <!-- Favicon COMPUNEA -->
-<link rel="icon" type="image/png" sizes="32x32"
-      href="https://juan-zuar76.github.io/Compunea-ST/media/favicon.png?v=5">
-<link rel="icon" type="image/png" sizes="192x192"
-      href="https://juan-zuar76.github.io/Compunea-ST/media/favicon.png?v=5">
-<link rel="apple-touch-icon" sizes="180x180"
-      href="https://juan-zuar76.github.io/Compunea-ST/media/favicon.png?v=5">
+<!-- Favicon (PNG) para todos los navegadores -->
+<link rel="icon" type="image/png"
+      href="https://juan-zuar76.github.io/Compunea-ST/media/favicon.png?v=3" sizes="32x32">
+<link rel="icon" type="image/png"
+      href="https://juan-zuar76.github.io/Compunea-ST/media/favicon.png?v=3" sizes="192x192">
+<link rel="apple-touch-icon"
+      href="https://juan-zuar76.github.io/Compunea-ST/media/favicon.png?v=3" sizes="180x180">
 <link rel="shortcut icon"
-      href="https://juan-zuar76.github.io/Compunea-ST/favicon.ico?v=5">
+      href="https://juan-zuar76.github.io/Compunea-ST/media/favicon.png?v=3">
 <meta name="theme-color" content="#0f172a">
 
 </head><body>
-<header class="site-header"><div class="wrap">
-  <a class="brand" href="../index.html"><span class="logo">CN</span><strong>COMPUNEA</strong></a>
+<header class="site-header">
+  <div class="wrap">
+  <a class="brand" href="../index.html">
+  <div class="logo">ST</div>
+  <span>COMPUNEA</span>
+</a>
   <button class="hamburger" id="navToggle" aria-expanded="false" aria-controls="mainMenu" aria-label="Abrir menú">
-    <span></span><span></span><span></span></button>
- <nav class="dropdown-menu" id="dropdownMenu">
-<a href="../index.html">Home</a>
-<a href="servicios.html">Servicios</a>
-<a href="contacto.html">Contacto</a>
-  </nav>
-
+    <span>
+    </span>
+    <span>
+    </span>
+    <span>
+    </span></button>
+<nav class="dropdown-menu" id="dropdownMenu">
+  <a href="../index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="academia.html">Academia</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
   <div class="backdrop" id="backdrop"></div>
 </div></header>
 
@@ -43,8 +47,8 @@
       <p>Diagnóstico, rework/reballing, limpieza profunda, upgrades SSD/RAM, instalación de SO.</p>
     </article>
     <article class="card revela">
-      <img class="card-img" src="../media/secur1.jpg" alt="Redes y seguridad">
-      <h3>Redes y Seguridad</h3>
+      <img class="card-img" src="../media/secur1.jpg" alt="conectividad y seguridad">
+      <h3>Conectividad y Seguridad</h3>
       <p>Cableado estructurado, Wi-Fi, CCTV, segmentación (VLAN), hardening básico para PyME.</p>
     </article>
     <article class="card revela">
@@ -54,28 +58,32 @@
     </article>
   </section>
 
-  <!-- Tira de imágenes/mini-galería temática -->
-<section class="strip">
-  <figure class="thumb">
-    <img src="../media/red1.jpg" alt="Patch panel y cableado">
-    <figcaption>Patch panel y cableado</figcaption>
-  </figure>
+ <section class="cards3">
 
-  <figure class="thumb">
-    <img src="../media/ard1.png"
-         alt="Placa Arduino en protoboard">
-    <figcaption>Proyectos en distintas plataformas de prorggramacion</figcaption>
-  </figure>
+  <article class="card revela">
+    <img src="../media/red1.jpg" alt="Redes estructurales">
+    <h3>Redes estructurales</h3>
+    <p>Infraestructura de red profesional y ordenada.</p>
+  </article>
 
-  <figure class="thumb">
-    <img src="../media/eset1.png" alt="Robot auto con sensores">
-    <figcaption>Robot automata con sensores</figcaption>
-  </figure>
+  <article class="card revela">
+    <img src="../media/ard1.png" alt="Arduino">
+    <h3>Proyectos IoT</h3>
+    <p>Desarrollo con Arduino y sistemas embebidos.</p>
+  </article>
 
-  <figure class="thumb">
-    <img src="../media/pc10.png" alt="Placa electrónica en reparación">
-    <figcaption>Placa electrónica en reparación</figcaption>
-  </figure>
+  <article class="card revela">
+    <img src="../media/eset1.png" alt="Robot">
+    <h3>Automatización</h3>
+    <p>Robótica y sensores aplicados a sistemas reales.</p>
+  </article>
+
+  <article class="card revela">
+    <img src="../media/pc10.png" alt="Reparación electrónica">
+    <h3>Reparación electrónica</h3>
+    <p>Diagnóstico y reparación de placas reales.</p>
+  </article>
+
 </section>
 
 
@@ -110,11 +118,5 @@
   <div>© <span id="year"></span> COMPUNEA</div><a href="contacto.html">Escribinos</a>
 </div></footer>
 <script src="../js/app.js"></script>
-<a class="wa-float" href="https://wa.me/5490000000000" target="_blank" aria-label="Chatear por WhatsApp"></a>
+<a class="wa-float" href="https://wa.me/5490000000000" target="_blank" aria-label="Chatear por WhatsApp">🟢</a>
 </body></html>
-
-
-
-
-
-

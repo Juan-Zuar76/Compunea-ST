@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>COMPUNEA.ST · Academia</title>
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="../css/style.css">
+
+ 
+  <!-- Favicons -->
+  <link rel="icon" type="image/png"
+        href="https://juan-zuar76.github.io/Compunea-ST/media/favicon.png?v=3">
+
+  <meta name="theme-color" content="#0f172a">
+
+  <style>
+    .glass{
+  background: rgba(20,30,50,.45);
+  border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+}
+    .academia-main{
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.academy-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: stretch;
+}@media(max-width:900px){
+
+  .academy-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+.glass ul{
+  padding-left: 20px;
+  margin: 0;
+}
+
+.glass li{
+  color: white;
+  margin-bottom: 10px;
+}
+    
+    /* Fondo general */
+    body{
+      background:
+        linear-gradient(rgba(5,10,20,.82), rgba(5,10,20,.88)),
+        url("../media/matrix-bg.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+      color: white;
+    }
+
+    /* Título */
+    .academia-title{
+      font-size: clamp(2.4rem,5vw,4rem);
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 50px;
+
+      color: #9fd4ff;
+
+      text-shadow:
+        0 0 5px rgba(255,255,255,.15),
+        0 0 12px rgba(0,170,255,.45),
+        0 0 22px rgba(0,120,255,.35);
+    }
+    .academy-subtitle{
+  font-size: 1.75rem;
+  color: #9fd4ff;
+  text-align:center;
+  max-width:900px;
+  margin: -20px auto 50px auto;
+  line-height:1.6;
+}
+
+    /* Cards */
+    .academy-card{
+      background: rgba(10,15,30,.88);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: .25s;
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+
+    .academy-card:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(0,0,0,.45);
+    }
+
+    .academy-card img{
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .academy-card .card-body{
+  padding: 22px;
+
+  display:flex;
+  flex-direction:column;
+}
+
+.academy-card .btn-compunea{
+  margin-top:auto;
+}
+
+    .academy-card h5{
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #8fd3ff;
+      margin-bottom: 10px;
+    }
+
+    .academy-card p{
+      color: #d7e8ff;
+      line-height: 1.5;
+    }
+
+    /* Botones */
+    .btn-compunea{
+      background: linear-gradient(180deg,#3ba7ff,#0066ff);
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      padding: 10px 18px;
+      color: white;
+      transition: .2s;
+    }
+
+    .btn-compunea:hover{
+      transform: scale(1.03);
+      filter: brightness(1.08);
+    }
+    .dropdown-menu.show{
+  display:flex !important;
+  flex-direction:column;
+} 
+.academy-card{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.academy-card .card-body{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-compunea{
+  margin-top: auto;
+}
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER MATRIX -->
+<header class="site-header">
+  <canvas class="matrix-canvas"></canvas>
+
+  <div class="wrap">
+
+    <!--boton con Logo -->
+    <a href="../index.html" class="brand">
+      <div class="logo">ST</div>
+      <span>COMPUNEA</span>
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button class="hamburger" id="navToggle" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  <!-- Menú desplegable -->
+  <nav class="dropdown-menu" id="dropdownMenu" style="display:none;">
+  <a href="../index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="academia.html">Academia</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
+
+<div class="backdrop" id="backdrop"></div>
+
+</header>
+
+<!-- CONTENIDO -->
+<main class="container academia-main">
+
+  <h1 class="academia-title">Academia COMPUNEA</h1>
+
+<p class="academy-subtitle">
+  Encontra aqui nuestros Cursos de especialización, workshops interactivos y formación técnica orientada al mundo real.
+</p>
+
+  <div id="top-academia"></div>
+
+<div class="academy-grid">
+
+  <!-- TARJETA 1 -->
+  <div class="academy-card">
+    <img src="../media/curso-pc.jpg" class="card-img-top" alt="Curso reparación PC">
+
+    <div class="card-body">
+      <h5 class="card-title">Curso de reparación de PC</h5>
+      <p class="card-text">
+        Diagnóstico, mantenimiento, instalación de sistemas y reparación de computadoras.
+      </p>
+      <a href="#temario-pc" class="btn-compunea">Ver temario</a>
+    </div>
+  </div>
+
+  <!-- TARJETA 2 -->
+  <div class="academy-card">
+    <img src="../media/curso-electronica.png" class="card-img-top" alt="Curso electrónica">
+
+    <div class="card-body">
+      <h5 class="card-title">Curso de electrónica aplicada</h5>
+      <p class="card-text">
+        Mediciones, componentes, diagnóstico electrónico y prácticas reales de taller.
+      </p>
+      <a href="#temario-electronica" class="btn-compunea">Ver temario</a>
+    </div>
+  </div>
+
+  <!-- TARJETA 3 -->
+  <div class="academy-card">
+    <img src="../media/worckshop.png" class="card-img-top" alt="Workshop interactivo">
+
+    <div class="card-body">
+      <h5 class="card-title">Workshop interactivo</h5>
+      <p class="card-text">
+        Talleres dinámicos con prácticas guiadas, proyectos y resolución de casos reales.
+      </p>
+      <a href="#temario-workshop" class="btn-compunea">Ver temario</a>
+    </div>
+  </div>
+
+</div>
+<!-- ================= TEMARIOS ================= -->
+
+<section class="container mt-5">
+
+  <!-- CURSO PC -->
+  <div id="temario-pc" class="card shadow-lg p-4 mb-5 glass">
+    <h2 class="mb-3 text-primary">Curso de reparación de PC</h2>
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"> - Diagnóstico de fallas</li>
+      <li class="list-group-item"> - Instalación de Windows</li>
+      <li class="list-group-item"> - Mantenimiento preventivo</li>
+      <li class="list-group-item"> - Armado de computadoras</li>
+      <li class="list-group-item"> - Cambio de pasta térmica</li>
+      <li class="list-group-item"> - Configuración de BIOS</li>
+      <li class="list-group-item"> - Fuentes ATX y mediciones</li>
+    </ul>
+    
+<a href="#top-academia" class="btn btn-primary mt-3">
+  Volver arriba
+</a>
+
+</div>
+  </div>
+
+  <!-- ELECTRONICA -->
+  <div id="temario-electronica" class="card shadow-lg p-4 mb-5 glass">
+    <h2 class="mb-3 text-primary">Curso de electrónica aplicada</h2>
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"> - Uso de multímetro</li>
+      <li class="list-group-item"> - Ley de Ohm</li>
+      <li class="list-group-item"> - Diagnóstico electrónico</li>
+      <li class="list-group-item"> - Componentes electrónicos</li>
+      <li class="list-group-item"> - Soldadura y microsoldadura</li>
+      <li class="list-group-item"> - Fuentes switching</li>
+      <li class="list-group-item"> - Mediciones reales de taller</li>
+    </ul>
+
+<a href="#top-academia" class="btn btn-primary mt-3">
+  Volver arriba
+</a>
+
+</div>
+  </div>
+
+  <!-- WORKSHOP -->
+  <div id="temario-workshop" class="card shadow-lg p-4 mb-5 glass">
+    <h2 class="mb-3 text-primary">Workshop interactivo</h2>
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"> - Trabajo grupal</li>
+      <li class="list-group-item"> - Resolución de casos reales</li>
+      <li class="list-group-item"> - Diagnóstico en vivo</li>
+      <li class="list-group-item"> - Armado de proyectos</li>
+      <li class="list-group-item"> - Técnicas profesionales</li>
+      <li class="list-group-item"> - Workshop práctico intensivo</li>
+    </ul>
+
+<a href="#top-academia" class="btn btn-primary mt-3">
+  Volver arriba
+</a>
+
+</div>
+  </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER-pie de pagina -->
+<footer>
+  <div class="container foot">
+    <div>© <span id="year"></span> COMPUNEA</div>
+    <a href="contacto.html">Escribinos</a>
+  </div>
+</footer>
+
+<script src="../js/app.js"></script>
+<script>
+const navToggle = document.getElementById("navToggle");
+const dropdownMenu = document.getElementById("dropdownMenu");
+
+navToggle.addEventListener("click", () => {
+  dropdownMenu.classList.toggle("show");
+});
+</script>
+
+</body>
+</html>
